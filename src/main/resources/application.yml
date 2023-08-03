@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+
+  h2:
+    console:
+      enabled: true
+      path: /test_db
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/test_db;AUTO_SERVER=true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+#    open-in-view: true
+
+
+logging:
+  level:
+    org.hibernate,SQL: debug
+    #    org.hibernate.type: trace # 2.x
+    org.hibernate.orm.jdbc.bind: trace  # 3.x
+
+
+
